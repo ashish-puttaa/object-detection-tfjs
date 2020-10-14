@@ -1,0 +1,88 @@
+* {
+   box-sizing: border-box;
+}
+
+.App {
+   margin: 20px auto;
+   /* display: block; */
+   width: max-content;
+   text-align: center;
+
+   h2 {
+      margin-bottom: 30px;
+   }
+
+   display: flex;
+   flex-direction: column;
+}
+
+.image {
+   height: 400px;
+   position: relative;
+   margin-bottom: 15px;
+
+   img {
+      object-fit: contain;
+      height: 100%;
+      border-radius: 8px;
+   }
+
+   .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.5);
+      display: grid;
+      place-items: center;
+      color: #222;
+   }
+}
+
+.change-image {
+   display: flex;
+   margin: 20px 0px;
+   height: 40px;
+   justify-content: center;
+   align-items: center;
+
+   input {
+      flex: 1;
+      padding: 10px;
+      height: 100%;
+      border-radius: 7px;
+      outline: none;
+      border: 1px solid #666;
+      color: #666;
+   }
+
+   button {
+      height: 100%;
+      margin-left: 15px;
+   }
+}
+
+.btn {
+   width: max-content;
+   padding: 10px 20px;
+   margin: 0 auto;
+   outline: none;
+   border: none;
+   border-radius: 7px;
+   cursor: pointer;
+}
+
+.btn--blue {
+   background-color: rgb(83, 172, 207);
+   color: white;
+}
+
+.btn--red {
+   background-color: rgb(235, 52, 46);
+   color: white;
+}
+
+.btn--large {
+   font-size: 20px;
+}
