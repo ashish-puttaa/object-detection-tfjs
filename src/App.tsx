@@ -31,16 +31,19 @@ const App: React.FC = () => {
 
    return (
       <div className="App">
+         <p className="title">
+            Object Detection <br /> using&nbsp;
+            <a href="https://www.tensorflow.org/js" target="_blank" rel="noopener noreferrer">
+               TensorFlow.js
+            </a>
+         </p>
+
          {isModalLoading ? (
             <div className="loading">
                <h1>Loading Modal...</h1>
             </div>
          ) : (
             <React.Fragment>
-               <p className="title">
-                  Object Detection <br /> using <span>TensorFlow.js</span>
-               </p>
-
                <div className="switch">
                   <span
                      onClick={() => selectOption('image')}
