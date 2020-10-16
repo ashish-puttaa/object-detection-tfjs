@@ -2,10 +2,10 @@ import styled, { css } from 'styled-components';
 
 const Button = css`
    width: max-content;
-   margin: 0 auto;
    outline: none;
    border: none;
    border-radius: 100px;
+   font-size: 16px;
    cursor: pointer;
 `;
 
@@ -22,13 +22,14 @@ export const Wrapper = styled.div`
 
 export const ImageContainer = styled.div`
    width: 100%;
-   height: 600px;
+   height: 500px;
+
    position: relative;
-   margin-bottom: 15px;
-   box-shadow: 2px 8px 15px rgba(0, 0, 0, 0.3);
+   box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.3);
    border-radius: 8px;
    overflow: hidden;
    background-color: #f6efee;
+   user-select: none;
 
    img {
       object-fit: cover;
@@ -64,15 +65,15 @@ export const Overlay = styled.div`
 /* Change Image Container */
 
 export const ChangeImage = styled.div`
-   width: 70%;
+   width: 85%;
    margin: 20px 0px;
+   margin-top: 35px;
    display: flex;
    align-items: center;
    font-size: 16px;
 
    input {
       flex: 1;
-      font-size: inherit;
       background-color: #f4f2f2;
       border: none;
       outline: none;
@@ -80,17 +81,19 @@ export const ChangeImage = styled.div`
       padding-right: 50px;
       border-radius: 100px;
       transition: all 0.3s;
-      margin-right: -60px;
+      margin-right: -55px;
    }
+`;
 
-   button {
-      ${Button}
-      margin-left: 15px;
-      padding: 12px 20px;
-      background-color: rgb(235, 52, 46);
-      font-size: inherit;
-      color: white;
-   }
+/* Change Button */
+
+export const ChangeBtn = styled.button`
+   ${Button}
+   margin-left: 15px;
+   padding: 12px 20px;
+   background-color: rgb(235, 52, 46);
+   font-size: inherit;
+   color: white;
 `;
 
 /* Predict Button */
@@ -98,9 +101,7 @@ export const ChangeImage = styled.div`
 export const PredictBtn = styled.button`
    ${Button}
    background-color: #333;
-   padding: 15px 30px;
-   margin-top: 27px;
+   padding: 12px 25px;
+   margin-left: 10px;
    color: white;
-   font-size: 18px;
-   text-transform: uppercase;
 `;

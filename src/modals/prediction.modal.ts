@@ -1,7 +1,5 @@
-interface Prediction {
-   bbox: number[];
-   class: string;
-   score: number;
-}
+import * as cocoSsd from '@tensorflow-models/coco-ssd';
 
-export default Prediction;
+export type Prediction = cocoSsd.DetectedObject;
+
+export type DetectionModal = cocoSsd.ObjectDetection;

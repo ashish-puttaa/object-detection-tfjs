@@ -1,15 +1,21 @@
 import React from 'react';
-import * as cocoSsd from '@tensorflow-models/coco-ssd';
 
-import Prediction from '../../modals/prediction.modal';
+import { Prediction, DetectionModal } from '../../modals/prediction.modal';
 
-import { Wrapper, Overlay, ImageContainer, ChangeImage, PredictBtn } from './predict-image.styles';
+import {
+   Wrapper,
+   Overlay,
+   ImageContainer,
+   ChangeImage,
+   PredictBtn,
+   ChangeBtn,
+} from './predict-image.styles';
 
 const DEFAULT_IMAGE =
    'https://images.unsplash.com/photo-1570913149827-d2ac84ab3f9a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80';
 
 interface PredictImageProps {
-   modal?: cocoSsd.ObjectDetection;
+   modal: DetectionModal;
 }
 
 const PredictImage: React.FC<PredictImageProps> = ({ modal }) => {
@@ -72,10 +78,9 @@ const PredictImage: React.FC<PredictImageProps> = ({ modal }) => {
 
          <ChangeImage>
             <input type="text" ref={inputRef} placeholder="Paste a url" defaultValue={imageUrl} />
-            <button onClick={changeImage}>Change</button>
+            <ChangeBtn onClick={changeImage}>Change</ChangeBtn>
+            {!isImageBroken && <PredictBtn onClick={predictImage}>Predict</PredictBtn>}
          </ChangeImage>
-
-         <PredictBtn onClick={predictImage}>Predict</PredictBtn>
 
          {isLoading && <p>Loading...</p>}
       </Wrapper>
